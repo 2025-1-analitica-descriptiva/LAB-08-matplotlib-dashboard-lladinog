@@ -2,7 +2,12 @@
 """
 Escriba el codigo que ejecute la accion solicitada.
 """
+import matplotlib.pyplot as plt
+import pandas as pd
 
+from homework.utils import (load_data,create_directory,create_visual_for_weight_distribution,
+                            create_visual_for_average_customer_rating,create_visual_for_mode_of_shipment,
+                            create_visual_for_shipping_per_warehouse,crear_html)
 
 def pregunta_01():
     """
@@ -35,3 +40,14 @@ def pregunta_01():
     * Su código debe crear la carpeta `docs` si no existe.
 
     """
+    df = load_data("files/input/shipping-data.csv")
+
+    create_directory("docs/")
+    create_visual_for_shipping_per_warehouse(df,"docs/Shipping_per_warehouse.png")
+    create_visual_for_mode_of_shipment(df, "docs/mode_of_shipment.png" )
+    create_visual_for_average_customer_rating(df, "docs/average_customer_rating.png")
+    create_visual_for_weight_distribution(df, "docs/weight_distribution.png")
+    crear_html("docs")
+
+if __name__ == "__main__":
+    pregunta_01()
