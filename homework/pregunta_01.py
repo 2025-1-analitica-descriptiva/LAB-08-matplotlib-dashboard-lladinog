@@ -43,7 +43,7 @@ def pregunta_01():
     df = load_data("files/input/shipping-data.csv")
 
     create_directory("docs/")
-    create_visual_for_shipping_per_warehouse(df,"docs/Shipping_per_warehouse.png")
+    create_visual_for_shipping_per_warehouse(df,"docs/shipping_per_warehouse.png")
     create_visual_for_mode_of_shipment(df, "docs/mode_of_shipment.png" )
     create_visual_for_average_customer_rating(df, "docs/average_customer_rating.png")
     create_visual_for_weight_distribution(df, "docs/weight_distribution.png")
